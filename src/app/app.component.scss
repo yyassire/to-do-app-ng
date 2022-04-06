@@ -1,0 +1,17 @@
+@import "../styles.scss";
+
+header {
+  width: 100vw;
+  height: 35vh;
+  background-color: rgb(79, 176, 214);
+  color: white;
+  @include responsive(phone) {
+    height: 15vh;
+  }
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

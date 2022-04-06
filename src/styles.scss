@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: 640px) {
+      @content;
+    }
+  }
+  @if $breakpoint == smallPhone {
+    @media screen and (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big {
+    @media screen and (max-width: 950px) {
+      @content;
+    }
+  }
+}

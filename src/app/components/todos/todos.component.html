@@ -1,0 +1,23 @@
+<div class="todo">
+  <form (submit)="handleSubmit()">
+    <input
+      [(ngModel)]="inputTodo"
+      name="todo"
+      type="text"
+      placeholder="enter your todo"
+      class="input"
+    />
+    <input type="submit" class="submit" />
+  </form>
+  <div class="listContainer" *ngFor="let item of list">
+    <div class="itemContainer">
+      <div class="item" (click)="handleCompleted(item.id)">
+        <input type="checkbox" [(ngModel)]="item.completed" />
+        <p class="{{ item.completed ? 'done' : '' }}">{{ item.content }}</p>
+      </div>
+      <div class="btns">
+        <button (click)="handleDelete(item.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
